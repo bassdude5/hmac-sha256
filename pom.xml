@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hmac</groupId>
@@ -14,89 +12,63 @@
 		<java.version>11</java.version>
 	</properties>
 
-	<dependencies>
+	<dependencies></dependencies>
 
-	</dependencies>
-
-<!-- <build>
-     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.2.2</version>
-            <configuration>
-                <archive>
-                    <index>true</index>
-                    <manifest>
-                        <mainClass>com.hmac.server.Server</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-     </plugins>
-</build> -->
-
-<build>
-<plugins>
-
-<!-- Skip default jar generation -->
-<plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.2</version>
 				<executions>
+					<!-- Skip default jar generation -->
 					<execution>
 						<id>default-jar</id>
 						<phase>none</phase>
 					</execution>
-				</executions>
-			</plugin>
 
-<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-jar-plugin</artifactId>
-	<version>3.2.2</version>
-	<executions>
-		<!-- create server.jar -->
-		<execution>
-			<id>server</id>
-			<goals>
-				<goal>jar</goal>
-			</goals>
-			<configuration>
-				<classifier>server</classifier>
-				<!-- <includes>
+					<!-- create server.jar -->
+					<execution>
+						<id>server</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>server</classifier>
+							<!-- <includes>
 					<include>**/server/**</include>
 				</includes> -->
-                <archive>
-                    <index>true</index>
-                    <manifest>
-                        <mainClass>com.hmac.server.Server</mainClass>
-                    </manifest>
-                </archive>
-			</configuration>
-		</execution>
-		<!-- create client.jar -->
-		<execution>
-			<id>client</id>
-			<goals>
-				<goal>jar</goal>
-			</goals>
-			<configuration>
-				<classifier>client</classifier>
+							<archive>
+								<index>true</index>
+								<manifest>
+									<mainClass>com.hmac.server.Server</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+					<!-- create client.jar -->
+					<execution>
+						<id>client</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>client</classifier>
 
-				<!-- <includes>
+							<!-- <includes>
 					<include>**/client/**</include>
 				</includes> -->
-                <archive>
-                    <index>true</index>
-                    <manifest>
-                        <mainClass>com.hmac.client.Client</mainClass>
-                    </manifest>
-                </archive>
-			</configuration>
-		</execution>
-	</executions>
-</plugin>
-</plugins>
-</build>
+							<archive>
+								<index>true</index>
+								<manifest>
+									<mainClass>com.hmac.client.Client</mainClass>
+								</manifest>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
