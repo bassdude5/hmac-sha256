@@ -1,3 +1,7 @@
+#Sources
+Core of the project taken from:
+https://github.com/smsali97/hmac-sha256
+
 # Compile
 Run the install.sh script from the project root directory.
 # Run
